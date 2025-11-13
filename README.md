@@ -2,56 +2,47 @@
 <img src="https://i.imgur.com/Ua7udoS.png" alt="Traffic Examination"/>
 </p>
 
-<h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
-In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
+# Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines
 
+## Project Summary
+This project demonstrates how network traffic flows between Azure Virtual Machines and how Network Security Groups (NSGs) affect that traffic. Using a Windows 10 VM with Wireshark and an Ubuntu Server VM, I tested different protocols such as ICMP, SSH, DNS, and HTTP/HTTPS. I then modified NSG rules to observe how blocking or allowing certain traffic changes the results.
 
-<h2>Video Demonstration</h2>
+**Environments Used:** Microsoft Azure Virtual Machines  
+**Operating Systems:** Windows 10, Ubuntu Server 20.04  
+**Tools / Technologies:** Wireshark, NSGs, Ping, SSH, DNS, HTTP/HTTPS  
 
-- ### [YouTube: Azure Virtual Machines, Wireshark, and Network Security Groups](https://www.youtube.com)
+The goal of this project was to better understand cloud networking, packet inspection, and how NSGs act like firewalls in Azure.
 
-<h2>Environments and Technologies Used</h2>
+## Media
 
-- Microsoft Azure (Virtual Machines/Compute)
-- Remote Desktop
-- Various Command-Line Tools
-- Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
-- Wireshark (Protocol Analyzer)
+*(I will add screenshots here after taking them)*
 
-<h2>Operating Systems Used </h2>
+**Screenshot 1:** Wireshark running on the Windows VM capturing network traffic.  
 
-- Windows 10 (21H2)
-- Ubuntu Server 20.04
+**Screenshot 2:** SSH connection from the Windows VM to the Ubuntu Server.  
 
-<h2>High-Level Steps</h2>
+**Screenshot 3:** NSG inbound rules (before and after blocking ICMP).  
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+**Screenshot 4:** Ping failing after ICMP is blocked in the NSG.  
 
-<h2>Actions and Observations</h2>
+**Screenshot 5:** DNS or HTTP/HTTPS packets captured in Wireshark.  
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+## Demonstration
+1. Created two Azure VMs on the same virtual network:  
+   - Windows 10 (used for Wireshark and testing)  
+   - Ubuntu Server (used for SSH, DNS, and general network testing)
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+2. Installed Wireshark on the Windows VM and started a live packet capture.
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+3. Used different protocols to generate traffic between the VMs:  
+   - ICMP using `ping`  
+   - SSH connection to Ubuntu  
+   - DNS lookups with `nslookup`  
+   - HTTP/HTTPS traffic using a browser or `curl`
+
+4. Modified NSG inbound rules to block specific protocols (like ICMP) and observed:  
+   - Ping traffic being blocked  
+   - No packets appearing in Wireshark when rules denied the traffic  
+   - Traffic working again after re-enabling the rule  
+
+This project helped me understand how NSGs filter traffic and how to inspect packets in real time using Wireshark.
