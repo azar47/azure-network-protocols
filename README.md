@@ -35,14 +35,14 @@ The goal of this project was to better understand cloud networking, packet inspe
 2. Installed Wireshark on the Windows VM and started a live packet capture.
 
 3. Used different protocols to generate traffic between the VMs:  
-   - ICMP using `ping`  
+   - ICMP using 'ping'
    - SSH connection to Ubuntu  
-   - DNS lookups with `nslookup`  
-   - HTTP/HTTPS traffic using a browser or `curl`
+   - DNS lookups with 'nslookup'
+   - HTTP/HTTPS traffic using a browser or 'curl'
 
 4. Modified NSG inbound rules to block specific protocols (like ICMP) and observed:  
    - Ping traffic being blocked  
    - No packets appearing in Wireshark when rules denied the traffic  
-   - Traffic working again after re-enabling the rule  
+   - Traffic working again after reenabling the rule  
 
-This project helped me understand how NSGs filter traffic and how to inspect packets in real time using Wireshark.
+The project demonstrates how NSGs filter traffic and how to inspect packets in real time using Wireshark.
