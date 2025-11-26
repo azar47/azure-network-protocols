@@ -13,7 +13,7 @@ This project demonstrates how network traffic flows between Azure Virtual Machin
 
 The goal of this project was to better understand cloud networking, packet inspection, and how NSGs act like firewalls in Azure.
 
-## MEdia
+## Media
 
 
 <img width="1920" height="1080" alt="NSGscreenshot1" src="https://github.com/user-attachments/assets/39cbb013-5c48-432b-b7d9-d2b0502973c2" />
