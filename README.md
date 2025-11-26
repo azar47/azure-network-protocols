@@ -41,7 +41,7 @@ Screenshot 5: DNS or HTTP/HTTPS packets captured in Wireshark.
 
 ---
 
-## Demonstration
+## Steps performed
 1. Created two Azure VMs on the same virtual network:  
    - Windows 10 (used for Wireshark and testing)  
    - Ubuntu Server (used for SSH, DNS, and general network testing)
