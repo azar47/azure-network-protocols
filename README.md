@@ -59,4 +59,5 @@ Screenshot 5: DNS or HTTP/HTTPS packets captured in Wireshark.
    - No packets appearing in Wireshark when rules denied the traffic  
    - Traffic working again after reenabling the rule  
 
-The project demonstrates how NSGs filter traffic and how to inspect packets in real time using Wireshark.
+This project helped me understand how firewalls and packet inspection work in cloud environments.
+
